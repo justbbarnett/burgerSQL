@@ -8,11 +8,15 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 20]
       }
     },
-    order: {
+    orderUp: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false
+      defaultValue: true
     }
+  }, {
+    // disable timestamps
+    timestamps: false
+  }
     
-  });
+  );
   return Burger;
 };

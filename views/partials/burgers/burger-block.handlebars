@@ -1,13 +1,14 @@
 <li>
-	{{name}}
+	{{id}} : {{name}}
 	<br>
+	{{#if orderUp}}
+		<button class="change-order btn btn-primary" data-id="{{this.id}}" data-neworder="{{orderUp}}">Deliver</button>
+	{{/if}}
 
-	{{#unless order}}
-		<button class="change-order btn btn-primary" data-id="{{id}}" data-neworder="{{order}}">Deliver</button>
+	{{#unless orderUp}}
+		<button class="change-order btn btn-danger" data-id="{{this.id}}" data-neworder="{{orderUp}}">Send it back!</button>
+		<button class="delete-burger btn btn-warning devour" data-id="{{this.id}}">Devour!</button>
 	{{/unless}}
 
-	{{#if order}}
-		<button class="change-order btn btn-danger" data-id="{{id}}" data-neworder="{{order}}">Send it back!</button>
-		<button class="delete-burger btn btn-warning devour" data-id="{{this.id}}">Devour!</button>
-	{{/if}}
+	
 </li>
